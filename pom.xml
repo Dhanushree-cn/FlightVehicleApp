@@ -60,7 +60,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.shanInfotech.FlightJdbcAppUsingStreamAPI</mainClass>
+                            <mainClass>com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
