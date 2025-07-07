@@ -12,8 +12,8 @@ public class MainClass {
 		IService sdao=new ServiceImple();
 		
 		try {
-			vdao.addVehicle();
-			sdao.addService();
+//			vdao.addVehicle();
+//			sdao.addService();
 			
 			List<vehicles>vehicles=vdao.getVehicle();
 			System.out.println("\n all vehicle");
