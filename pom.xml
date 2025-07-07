@@ -50,9 +50,8 @@
   
 
  <build>
-		
-			<plugins>
-				<!-- JAR Plugin to specify the main class -->
+        <plugins>
+            <!-- JAR Plugin to specify the main class -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -60,13 +59,34 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI.MainClass
-</mainClass>
+                            <mainClass>com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI.MainClass</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
-			</plugins>
-		
-	</build>
+
+            <!-- SHADE Plugin to create an executable fat JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI.MainClass</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+</build>
 </project>
