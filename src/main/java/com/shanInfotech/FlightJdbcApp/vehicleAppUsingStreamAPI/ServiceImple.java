@@ -11,6 +11,7 @@ import com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI.DBConnect;
 
 public class ServiceImple implements IService {
 	private Connection con=null;
+
 	private PreparedStatement ps=null;
 	private ResultSet rs=null;
 	Scanner sc=new Scanner(System.in);
@@ -19,6 +20,7 @@ public class ServiceImple implements IService {
 
 	@Override
 	public void addService() throws Exception {
+		con.setAutoCommit(false);
 		List<vehicles> vehicles=vdao.getVehicle();
 		System.out.println("Available vehicle");
 		vehicles.forEach(System.out::println);
@@ -62,6 +64,7 @@ public class ServiceImple implements IService {
 	System.out.println("data inserted successfully");
 	
 	con.close();
+	
 	
 	
 	

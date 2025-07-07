@@ -17,6 +17,7 @@ public class VehicleImple  implements IVehicle{
 
 	@Override
 	public void addVehicle() throws Exception {
+		con.setAutoCommit(false);
 		System.out.println("Enter vehicle id:");
 		int vid=sc.nextInt();
 		sc.nextLine();
