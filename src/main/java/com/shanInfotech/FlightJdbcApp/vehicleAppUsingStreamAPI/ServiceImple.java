@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
-import com.shanInfotech.FlightJdbcApp.DBConnect;
 
 public class ServiceImple implements IService {
 	private Connection con=null;
@@ -94,6 +93,18 @@ public class ServiceImple implements IService {
 		con.close();
 		
 		return list;
+	}
+
+	@Override
+	public void addserviceRecords() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getserviceRecords() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
