@@ -20,7 +20,7 @@ public class ServiceImple implements IService {
 
 	@Override
 	public void addService() throws Exception {
-		con.setAutoCommit(false);
+		
 		List<vehicles> vehicles=vdao.getVehicle();
 		System.out.println("Available vehicle");
 		vehicles.forEach(System.out::println);

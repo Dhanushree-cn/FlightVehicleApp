@@ -17,7 +17,7 @@ public class VehicleImple  implements IVehicle{
 
 	@Override
 	public void addVehicle() throws Exception {
-		con.setAutoCommit(false);
+		
 		System.out.println("Enter vehicle id:");
 		int vid=sc.nextInt();
 		sc.nextLine();
@@ -55,7 +55,8 @@ public class VehicleImple  implements IVehicle{
 	@Override
 	public List<vehicles> getVehicle() throws Exception {
 		List<vehicles>list=new ArrayList<>();
-		Connection con=DBConnect.Connect();
+		con=DBConnect.Connect();
+		
 		PreparedStatement ps=con.prepareStatement("Select * from vehicles");
 		rs=ps.executeQuery();
 		while(rs.next()) {
@@ -69,5 +70,6 @@ public class VehicleImple  implements IVehicle{
 		}
 		return list;
 	}
+	
 
 }
