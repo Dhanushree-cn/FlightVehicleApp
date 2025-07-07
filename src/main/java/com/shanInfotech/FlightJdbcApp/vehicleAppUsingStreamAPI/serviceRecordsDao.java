@@ -1,15 +1,17 @@
 package com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.Scanner;
 
 import com.shanInfotech.FlightJdbcApp.DBConnect;
 import com.shanInfotech.FlightJdbcApp.VehicleServiceApp.IserviceRecords;
 import com.shanInfotech.FlightJdbcApp.VehicleServiceApp.serviceRecords;
 
-public class serviceRecordsDao  implements IserviceRecords{
+public class serviceRecordsDao  implements IService{
 	
 	private Connection con=null;
 	private PreparedStatement ps=null;
@@ -48,6 +50,18 @@ public class serviceRecordsDao  implements IserviceRecords{
 	public void getserviceRecords() {
 	
 		
+	}
+
+	@Override
+	public void addService() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<com.shanInfotech.FlightJdbcApp.vehicleAppUsingStreamAPI.serviceRecords> getService() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
